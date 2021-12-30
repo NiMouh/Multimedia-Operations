@@ -1,18 +1,3 @@
-""""
-  *     PSEUDO-CÓDIGO
-  1     Initialize table with single character strings
-  2     P = primeiro simbolo
-  3     WHILE enquanto existir caracteres
-  4          C = próximo simbolo
-  5          IF P + C está na tabela de strings
-  6            P = P + C
-  7          ELSE
-  8            adiciona ao código de P
-  9          adicionar P + C á tabela de strings
-  10           P = C
-  11         ACABA WHILE
-  12    output do código do P
-"""
 
 
 def lzw_compressao(string):
