@@ -7,9 +7,9 @@
 		- OR X
 		
 	> APLICAÇÃO DE FILTROS;
-		- Negativo X
-		- Inversão X
-		- Preto e branco X
+		— Negativo X
+		— Inversão X
+		— Preto e branco X
 
 ## VIDEO
 	- FAZER VIDEO A CORES FICAR A PRETO E BRANCO X
@@ -23,8 +23,9 @@
 
 
 # COMPRESSÃO
-    - Compressão em LZW X
-    - TÉCNICAS DE SUPRESSÃO DE SEQUÊNCIAS REPETITIVAS;
+    — Compressão em LZW X
+    — TÉCNICAS DE SUPRESSÃO DE SEQUÊNCIAS REPETITIVAS;
+    — Compressão Run-Legth;
 
 
 

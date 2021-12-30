@@ -24,6 +24,18 @@ def lzw_compressao(string):
     return codigoP
 
 
+""""
+O algoritmo de codificação funciona da seguinte forma (RUN-LENGTH):
+
+- Determinar uma FLAG que não exista no texto a comprimir.
+- Ler um caracter. Ler os próximos caracteres enquanto forem iguais ao primeiro caracter lido.
+- Se o número total de caracteres lidos for igual ou superior a 4, 
+comprimir essa cadeia de caracteres da seguinte forma: FLAG + nº de repetições + caracter.
+- Se o numero total de caracteres lidos for inferior a 4, não se efetua compressão, 
+logo essa cadeia de caracteres permanece inalterável.
+"""
+
+
 def menu():
     print("<--- Bem-vindo á compressão --->\n")
     print("1: Compressão em LZW.")
