@@ -39,7 +39,7 @@ logo essa cadeia de caracteres permanece inalterável.
 def menu():
     print("<--- Bem-vindo á compressão --->\n")
     print("1: Compressão em LZW.")
-    print("2: Técnicas de supressão de sequências repetitivas.")
+    print("2: Técnica Run-Length Encoding (RLE).")
     print("0: Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
