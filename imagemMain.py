@@ -178,5 +178,5 @@ if __name__ == "__main__":
             invertida(imagem_primaria)
             print("Opção 7 foi concluída.")
         else:
-            print("Opção inválida..")
+            print("Opção inválida.")
         opcao = menu()
