@@ -143,7 +143,7 @@ def menu():
     print("5: Transformar uma imagem a cores numa em preto e branco.")
     print("6: Transformar uma imagem no seu negativo.")
     print("7 : Transformar uma imagem no seu inverso.")
-    print("0: Terminar.\n")
+    print("0: Terminar. \n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
 
