@@ -55,8 +55,8 @@ if __name__ == "__main__":
     opcao = menu()
 
     # Para a compressao de lzw
-    ficheiro_leitura_lzw = open("Compressao/comp.txt", "r")
-    ficheiro_escrita_lzw = open("Compressao/comp2.txt", "w")
+    ficheiro_leitura_lzw = open("Compressao/lzw.txt", "r")
+    ficheiro_escrita_lzw = open("Compressao/enlzw.txt", "w")
 
     strr = ficheiro_leitura_lzw.read()
     strr = strr + '\0'
