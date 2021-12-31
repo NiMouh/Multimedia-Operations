@@ -25,7 +25,7 @@
 # COMPRESSÃO
     — Compressão em LZW X
     — TÉCNICAS DE SUPRESSÃO DE SEQUÊNCIAS REPETITIVAS;
-    — Compressão Run-Legth;
+    — Compressão Run-Legth X
 
 
 

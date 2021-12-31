@@ -1,5 +1,3 @@
-
-
 def lzw_compressao(string):
     dicionario = []
 
@@ -23,18 +21,6 @@ def lzw_compressao(string):
             P = C
     print("O rácio de compressão é de: " + str(len(string) / len(codigoP)))
     return codigoP
-
-
-""""
-O algoritmo de codificação funciona da seguinte forma (RUN-LENGTH):
-
-- Determinar uma FLAG que não exista no texto a comprimir.
-- Ler um caracter. Ler os próximos caracteres enquanto forem iguais ao primeiro caracter lido.
-- Se o número total de caracteres lidos for igual ou superior a 4, 
-comprimir essa cadeia de caracteres da seguinte forma: FLAG + nº de repetições + caracter.
-- Se o numero total de caracteres lidos for inferior a 4, não se efetua compressão, 
-logo essa cadeia de caracteres permanece inalterável.
-"""
 
 
 def rl_compressao(string):
@@ -68,22 +54,36 @@ def menu():
 if __name__ == "__main__":
     opcao = menu()
 
-    ficheiro_leitura = open("Compressao/comp.txt", "r")
-    ficheiro_escrita = open("Compressao/comp2.txt", "w")
+    # Para a compressao de lzw
+    ficheiro_leitura_lzw = open("Compressao/comp.txt", "r")
+    ficheiro_escrita_lzw = open("Compressao/comp2.txt", "w")
 
-    strr = ficheiro_leitura.read()
+    strr = ficheiro_leitura_lzw.read()
     strr = strr + '\0'
+
+    # Para as Técnicas de supressão de sequências repetitivas
+    ficheiro_leitura_tssr = open("Compressao/tssr.txt", "r")
+    ficheiro_escrita_tssr = open("Compressao/entssr.txt", "w")
+
+    strrr = ficheiro_leitura_tssr.read()
+
     while opcao != 0:
         if opcao == 1:
-            out = lzw_compressao(strr)
-            ficheiro_escrita.write(out)
-            print(out)
+            out_lzw = lzw_compressao(strr)
+            ficheiro_escrita_lzw.write(out_lzw)
+            print(out_lzw)
         elif opcao == 2:
-            teste = "wwwwaaadexxxxxxywww"
-            print(rl_compressao(teste))
-            print("OPÇÃO 2")
+            out_tssr = rl_compressao(strrr)
+            ficheiro_escrita_tssr.write(out_tssr)
+            print(out_tssr)
         else:
             print("Opção inválida.")
         opcao = menu()
-    ficheiro_leitura.close()
-    ficheiro_escrita.close()
+
+    # Fechando os ficheiros de leitura
+    ficheiro_leitura_lzw.close()
+    ficheiro_leitura_tssr.close()
+
+    # Fechando os ficheiros de escrita
+    ficheiro_escrita_lzw.close()
+    ficheiro_escrita_tssr.close()
