@@ -21,6 +21,7 @@ def lzw_compressao(string):
             codigoP = codigoP + str(dicionario.index(P) + 1)
             dicionario.append(P + C)
             P = C
+    print("O rácio de compressão é de: " + str(len(string) / len(codigoP)))
     return codigoP
 
 
@@ -36,8 +37,27 @@ logo essa cadeia de caracteres permanece inalterável.
 """
 
 
+def rl_compressao(string):
+    codigoRL = ""
+    i = 0
+    while i < len(string):
+
+        conta = 1
+        while i < len(string) - 1 and string[i] == string[i + 1]:
+            conta += 1
+            i += 1
+        i += 1
+
+        if conta >= 2:
+            codigoRL += str(conta) + "!" + string[i - 1]
+        else:
+            codigoRL += string[i - 1]
+    print("O rácio de compressão é de: " + str(len(string) / len(codigoRL)))
+    return codigoRL
+
+
 def menu():
-    print("<--- Bem-vindo á compressão --->\n")
+    print("\n<--- Bem-vindo á compressão --->\n")
     print("1: Compressão em LZW.")
     print("2: Técnica Run-Length Encoding (RLE).")
     print("0: Terminar.\n")
@@ -58,10 +78,9 @@ if __name__ == "__main__":
             out = lzw_compressao(strr)
             ficheiro_escrita.write(out)
             print(out)
-
-            print("O rácio de compressão é de:")
-            print(len(strr)/len(out))
         elif opcao == 2:
+            teste = "wwwwaaadexxxxxxywww"
+            print(rl_compressao(teste))
             print("OPÇÃO 2")
         else:
             print("Opção inválida.")
