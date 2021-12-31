@@ -2,14 +2,19 @@ from pydub import AudioSegment
 
 
 def corta_audio(primeiro_tempo, segundo_tempo, audio):
+
+    # Conversão dos tempos dados para segundos
     t1 = primeiro_tempo * 1000
     t2 = segundo_tempo * 1000
 
+    # Declaração do "audio_cortado" como sendo igual uma fração do vetor do audio original e exportação do mesmo
     audio_cortado = audio[t1:t2]
     audio_cortado.export('Som/corte.wav', format="wav")
 
 
 def junta_audio(primeiro_audio, segundo_audio):
+
+    # Declaração do "juncao_audio" como sendo igual ao produto dos vetores dos audios originais e exportação do mesmo
     juncao_audio = primeiro_audio * segundo_audio
     juncao_audio.export('Som/juncao.wav', format="wav")
 
@@ -17,6 +22,7 @@ def junta_audio(primeiro_audio, segundo_audio):
 def normaliza_audio(valor_dbfs, audio):
     amplitude = valor_dbfs - audio.dBFS
 
+    # Declaração do "audio_normalizado" sendo igual ao audio original + o valor da amplitude e exportação do mesmo
     audio_normalizado = audio + amplitude
     audio_normalizado.export("Som/normalizado.wav", format="wav")
 
@@ -43,6 +49,7 @@ def menu():
 if __name__ == "__main__":
     opcao = menu()
 
+    # Inicializa os audios
     audio_um = AudioSegment.from_wav('Som/som1.wav')
     audio_dois = AudioSegment.from_wav('Som/som2.wav')
 
@@ -65,4 +72,6 @@ if __name__ == "__main__":
             print("Opção 4 foi concluída.")
         else:
             print("Opção inválida.")
+
+        # Volta a printar o menu
         opcao = menu()

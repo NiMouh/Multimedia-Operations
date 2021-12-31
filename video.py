@@ -1,18 +1,22 @@
 import cv2
 
+# Inicializa o video
 video = cv2.VideoCapture('Video/video.mp4')
 
+# Determina a resolução do video capturado
 largura_quadro = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 altura_quadro = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
-
 tamanho = (largura_quadro, altura_quadro)
 
+# Define o formato do video
 fourcc = cv2.VideoWriter_fourcc('M', 'P', '4', 'V')
 
+# Inicializa o novo video
 novo_video = cv2.VideoWriter('Video/blacknwhite_video.mp4', fourcc, 30.0, tamanho)
 
 while True:
 
+    # Leitura dos frames
     existeQuadro, quadro = video.read()
 
     if existeQuadro:
@@ -25,6 +29,7 @@ while True:
     else:
         break
 
+# Encerra os videos e encerra todas as janelas
 video.release()
 novo_video.release()
 cv2.destroyAllWindows()
