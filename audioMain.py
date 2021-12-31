@@ -30,7 +30,7 @@ def atraso_audio(atraso_ms, audio):  # ISTO É SLOW-MO!!!
 
 
 def menu():
-    print("<--- Bem-vindo à edição de audio --->\n")
+    print("\n<--- Bem-vindo à edição de audio --->\n")
     print("1: Cortar parte de um audio.")
     print("2: Juntar 2 audios.")
     print("3: Normalizar um audio.")
