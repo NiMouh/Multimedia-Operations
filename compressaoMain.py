@@ -1,3 +1,5 @@
+
+
 def lzw_compressao(string):
     dicionario = []
 
