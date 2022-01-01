@@ -135,9 +135,7 @@ def negativo(imagem):
             pixel1 = imagem.getpixel((i, j))
 
             R = 255 - pixel1[0]
-
             G = 255 - pixel1[1]
-
             B = 255 - pixel1[2]
 
             # Coloca o pixel na imagem
