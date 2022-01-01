@@ -160,7 +160,7 @@ def invertida(imagem):
             invertida_img.putpixel((ip, j), pixel1)
 
     # Guarda a imagem
-    invertida_img.save("Imagens/invetida.jpg")
+    invertida_img.save("Imagens/invertida.jpg")
 
 
 def menu():
