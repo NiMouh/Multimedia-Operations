@@ -164,7 +164,7 @@ def invertida(imagem):
 
 
 def menu():
-    print("\n<--- Bem-vindo á edição de imagens --->\n")
+    print("\n<--- Bem-vindo à edição de imagens --->\n")
     print("1: Fazer adição entre 2 imagens.")
     print("2: Fazer subtração entre 2 imagens.")
     print("3: Fazer AND lógico entre 2 imagens.")
