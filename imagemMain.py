@@ -165,7 +165,7 @@ def negativo(imagem):
     negativo_img.save("Imagens/negativo.jpg")
 
 
-def invertida(imagem):
+def invertida_horizontal(imagem):
 
     # Inicializa a imagem em branco
     invertida_img = Image.new(imagem.mode, imagem.size, 'White')
@@ -180,7 +180,25 @@ def invertida(imagem):
             invertida_img.putpixel((ip, j), pixel1)
 
     # Guarda a imagem
-    invertida_img.save("Imagens/invertida.jpg")
+    invertida_img.save("Imagens/invertida_horizontal.jpg")
+
+
+def invertida_vertical(imagem):
+
+    # Inicializa a imagem em branco
+    invertida_img = Image.new(imagem.mode, imagem.size, 'White')
+
+    for i in range(0, invertida_img.width):
+        for j in range(0, invertida_img.height):
+            # Obtém o píxel da imagem original
+            pixel1 = imagem.getpixel((i, j))
+            jp = (imagem.height - j) - 1
+
+            # Coloca o pixel na imagem
+            invertida_img.putpixel((i, jp), pixel1)
+
+    # Guarda a imagem
+    invertida_img.save("Imagens/invertida_vertical.jpg")
 
 
 def menu():
@@ -192,7 +210,8 @@ def menu():
     print("5: Fazer XOR lógico entre 2 imagens.")
     print("6: Transformar uma imagem a cores numa em preto e branco.")
     print("7: Transformar uma imagem no seu negativo.")
-    print("8: Transformar uma imagem no seu inverso.")
+    print("8: Transformar uma imagem no seu inverso.(horizontalmente)")
+    print("9: Transformar uma imagem no seu inverso (verticalmente).")
     print("0: Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
@@ -229,8 +248,11 @@ if __name__ == "__main__":
             negativo(imagem_terciaria)
             print("Operação 7 foi concluída.")
         elif opcao == 8:
-            invertida(imagem_primaria)
+            invertida_horizontal(imagem_primaria)
             print("Operação 8 foi concluída.")
+        elif opcao == 9:
+            invertida_vertical(imagem_primaria)
+            print("Operação 9 foi concluída.")
         else:
             print("Opção inválida.")
 
