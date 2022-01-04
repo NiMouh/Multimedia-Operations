@@ -101,6 +101,26 @@ def or_imagem(primeira_imagem, segunda_imagem):
     or_img.save("Imagens/or.jpg")
 
 
+def xor_imagem(primeira_imagem, segunda_imagem):
+
+    # Inicializa a imagem em branco
+    xor_img = Image.new(primeira_imagem.mode, primeira_imagem.size, 'White')
+
+    for i in range(0, xor_img.width):
+        for j in range(0, xor_img.height):
+            # Obtém o píxel das imagens originais
+            pixel1 = primeira_imagem.getpixel((i, j))
+            pixel2 = segunda_imagem.getpixel((i, j))
+
+            pixel3 = tuple(pixel1 ^ pixel2 for pixel1, pixel2 in zip(pixel1, pixel2))
+
+            # Coloca o pixel na imagem
+            xor_img.putpixel((i, j), pixel3)
+
+    # Guarda a imagem
+    xor_img.save("Imagens/xor.jpg")
+
+
 def preto_e_branco(imagem):
 
     # Inicializa a imagem em branco
@@ -145,7 +165,7 @@ def negativo(imagem):
     negativo_img.save("Imagens/negativo.jpg")
 
 
-def invertida(imagem):
+def invertida_horizontal(imagem):
 
     # Inicializa a imagem em branco
     invertida_img = Image.new(imagem.mode, imagem.size, 'White')
@@ -160,7 +180,25 @@ def invertida(imagem):
             invertida_img.putpixel((ip, j), pixel1)
 
     # Guarda a imagem
-    invertida_img.save("Imagens/invertida.jpg")
+    invertida_img.save("Imagens/invertida_horizontal.jpg")
+
+
+def invertida_vertical(imagem):
+
+    # Inicializa a imagem em branco
+    invertida_img = Image.new(imagem.mode, imagem.size, 'White')
+
+    for i in range(0, invertida_img.width):
+        for j in range(0, invertida_img.height):
+            # Obtém o píxel da imagem original
+            pixel1 = imagem.getpixel((i, j))
+            jp = (imagem.height - j) - 1
+
+            # Coloca o pixel na imagem
+            invertida_img.putpixel((i, jp), pixel1)
+
+    # Guarda a imagem
+    invertida_img.save("Imagens/invertida_vertical.jpg")
 
 
 def menu():
@@ -169,9 +207,11 @@ def menu():
     print("2: Fazer subtração entre 2 imagens.")
     print("3: Fazer AND lógico entre 2 imagens.")
     print("4: Fazer OR lógico entre 2 imagens.")
-    print("5: Transformar uma imagem a cores numa em preto e branco.")
-    print("6: Transformar uma imagem no seu negativo.")
-    print("7: Transformar uma imagem no seu inverso.")
+    print("5: Fazer XOR lógico entre 2 imagens.")
+    print("6: Transformar uma imagem a cores numa em preto e branco.")
+    print("7: Transformar uma imagem no seu negativo.")
+    print("8: Transformar uma imagem no seu inverso.(horizontalmente)")
+    print("9: Transformar uma imagem no seu inverso (verticalmente).")
     print("0: Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
@@ -199,14 +239,20 @@ if __name__ == "__main__":
             or_imagem(imagem_primaria, imagem_secundaria)
             print("Operação 4 foi concluída.")
         elif opcao == 5:
-            preto_e_branco(imagem_primaria)
-            print("Operação 5 foi concluída.")
+            xor_imagem(imagem_primaria, imagem_secundaria)
+            print("Operação 5 foi concluída")
         elif opcao == 6:
-            negativo(imagem_terciaria)
+            preto_e_branco(imagem_primaria)
             print("Operação 6 foi concluída.")
         elif opcao == 7:
-            invertida(imagem_primaria)
+            negativo(imagem_terciaria)
             print("Operação 7 foi concluída.")
+        elif opcao == 8:
+            invertida_horizontal(imagem_primaria)
+            print("Operação 8 foi concluída.")
+        elif opcao == 9:
+            invertida_vertical(imagem_primaria)
+            print("Operação 9 foi concluída.")
         else:
             print("Opção inválida.")
 
