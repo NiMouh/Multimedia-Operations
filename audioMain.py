@@ -63,6 +63,7 @@ if __name__ == "__main__":
     # Inicializa os audios
     audio_um = AudioSegment.from_wav('Som/som1.wav')
     audio_dois = AudioSegment.from_wav('Som/som2.wav')
+    audio_tres = AudioSegment.from_wav('Som/som3.wav')
 
     while opcao != 0:
         if opcao == 1:
@@ -75,7 +76,7 @@ if __name__ == "__main__":
             print("Opção 2 foi concluída.")
         elif opcao == 3:
             valor = float(input("Qual o valor da normalização que pretende (em dBS): "))
-            normaliza_audio(valor, audio_dois)
+            normaliza_audio(valor, audio_tres)
             print("Opção 3 foi concluída.")
         elif opcao == 4:
             vel = float(input("Que a percentagem de abrandamento pretende que o video tenha (decimal): "))
