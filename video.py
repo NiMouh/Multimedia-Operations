@@ -29,7 +29,7 @@ while True:
     else:
         break
 
-# Encerra os videos e encerra todas as janelas
+# Encerra as operações entre os videos
 video.release()
 novo_video.release()
-cv2.destroyAllWindows()
+
