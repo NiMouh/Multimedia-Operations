@@ -27,12 +27,22 @@ def normaliza_audio(valor_dbfs, audio):
     audio_normalizado.export("Som/normalizado.wav", format="wav")
 
 
-def atraso_audio(atraso_ms, audio):  # ISTO É SLOW-MO!!!
+def abranda_audio(velocidade, audio):
 
-    audio_delay = audio
+    audio_slowed = audio
+    slowed = 1 - velocidade
 
-    audio_delay.frame_rate *= atraso_ms
-    audio_delay.export('Som/delay.wav', format="wav")
+    audio_slowed.frame_rate *= slowed
+    audio_slowed.export("Som/slowed.wav", format="wav")
+
+
+def atraso_audio(atraso_ms, audio):
+
+    audio_delay = AudioSegment.empty()
+    for x in range(atraso_ms):
+        audio_delay.split_to_mono().append(0)
+    audio_delay.split_to_mono().append(audio)
+    audio_delay.export("Som/delay.wav", format="wav")
 
 
 def menu():
@@ -40,7 +50,8 @@ def menu():
     print("1: Cortar parte de um audio.")
     print("2: Juntar 2 audios.")
     print("3: Normalizar um audio.")
-    print("4: Colocar atraso (delay) num audio.")
+    print("4: Abrandar um audio.")
+    print("5: Colocar atraso (delay) num audio.")
     print("0: Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
@@ -67,9 +78,13 @@ if __name__ == "__main__":
             normaliza_audio(valor, audio_dois)
             print("Opção 3 foi concluída.")
         elif opcao == 4:
-            delay = float(input("Qual o delay que pretende (em %): "))
-            atraso_audio(delay, audio_dois)
+            vel = float(input("Que a percentagem de abrandamento pretende que o video tenha (decimal): "))
+            abranda_audio(vel, audio_um)
             print("Opção 4 foi concluída.")
+        elif opcao == 5:
+            delay = int(input("Qual o delay que pretende (em ms): "))
+            atraso_audio(delay, audio_dois)
+            print("Opção 5 foi concluída.")
         else:
             print("Opção inválida.")
 
