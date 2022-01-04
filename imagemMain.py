@@ -4,7 +4,7 @@ from PIL import Image
 def adicao(primeira_imagem, segunda_imagem):
 
     # Inicializa a imagem em branco
-    adicao_imagem = Image.new("RGB", primeira_imagem.size, 'White')
+    adicao_imagem = Image.new(primeira_imagem.mode, primeira_imagem.size, 'White')
 
     for i in range(0, adicao_imagem.width):
         for j in range(0, adicao_imagem.height):
@@ -34,7 +34,7 @@ def adicao(primeira_imagem, segunda_imagem):
 def subtracao(primeira_imagem, segunda_imagem):
 
     # Inicializa a imagem em branco
-    subtracao_imagem = Image.new("RGB", primeira_imagem.size, 'White')
+    subtracao_imagem = Image.new(primeira_imagem.mode, primeira_imagem.size, 'White')
 
     for i in range(0, subtracao_imagem.width):
         for j in range(0, subtracao_imagem.height):
@@ -64,7 +64,7 @@ def subtracao(primeira_imagem, segunda_imagem):
 def and_imagem(primeira_imagem, segunda_imagem):
 
     # Inicializa a imagem em branco
-    and_img = Image.new("RGB", primeira_imagem.size, 'White')
+    and_img = Image.new(primeira_imagem.mode, primeira_imagem.size, 'White')
 
     for i in range(0, and_img.width):
         for j in range(0, and_img.height):
@@ -84,7 +84,7 @@ def and_imagem(primeira_imagem, segunda_imagem):
 def or_imagem(primeira_imagem, segunda_imagem):
 
     # Inicializa a imagem em branco
-    or_img = Image.new("RGB", primeira_imagem.size, 'White')
+    or_img = Image.new(primeira_imagem.mode, primeira_imagem.size, 'White')
 
     for i in range(0, or_img.width):
         for j in range(0, or_img.height):
@@ -104,7 +104,7 @@ def or_imagem(primeira_imagem, segunda_imagem):
 def preto_e_branco(imagem):
 
     # Inicializa a imagem em branco
-    preto_branco_img = Image.new("RGB", imagem.size, 'White')
+    preto_branco_img = Image.new(imagem.mode, imagem.size, 'White')
 
     for i in range(0, preto_branco_img.width):
         for j in range(0, preto_branco_img.height):
@@ -127,7 +127,7 @@ def preto_e_branco(imagem):
 def negativo(imagem):
 
     # Inicializa a imagem em branco
-    negativo_img = Image.new("RGB", imagem.size, 'White')
+    negativo_img = Image.new(imagem.mode, imagem.size, 'White')
 
     for i in range(0, negativo_img.width):
         for j in range(0, negativo_img.height):
@@ -148,7 +148,7 @@ def negativo(imagem):
 def invertida(imagem):
 
     # Inicializa a imagem em branco
-    invertida_img = Image.new("RGB", imagem.size, 'White')
+    invertida_img = Image.new(imagem.mode, imagem.size, 'White')
 
     for i in range(0, invertida_img.width):
         for j in range(0, invertida_img.height):
