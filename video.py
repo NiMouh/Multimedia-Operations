@@ -8,11 +8,12 @@ largura_quadro = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 altura_quadro = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
 tamanho = (largura_quadro, altura_quadro)
 
-# Define o formato do video
+# Define o formato do video e quadros por segundo
 fourcc = cv2.VideoWriter_fourcc('M', 'P', '4', 'V')
+fps = video.get(cv2.CAP_PROP_FPS)
 
 # Inicializa o novo video
-novo_video = cv2.VideoWriter('Video/blacknwhite_video.mp4', fourcc, 30.0, tamanho)
+novo_video = cv2.VideoWriter('Video/blacknwhite_video.mp4', fourcc, fps, tamanho)
 
 while True:
 
