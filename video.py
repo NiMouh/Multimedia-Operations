@@ -33,4 +33,3 @@ while True:
 # Encerra as operações entre os videos
 video.release()
 novo_video.release()
-

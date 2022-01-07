@@ -73,11 +73,11 @@ if __name__ == "__main__":
         if opcao == 1:
             out_lzw = lzw_compressao(strr)
             ficheiro_escrita_lzw.write(out_lzw)
-            print(out_lzw)
+            print("O código comprimido é: " + out_lzw)
         elif opcao == 2:
             out_tssr = rl_compressao(strrr)
             ficheiro_escrita_tssr.write(out_tssr)
-            print(out_tssr)
+            print("O código comprimido é: " + out_tssr)
         else:
             print("Opção inválida.")
         opcao = menu()
