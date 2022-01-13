@@ -79,7 +79,10 @@ def invertidovid(vid):
         existeQuadro, quadro = video.read()
 
         if existeQuadro:
+
+            # Considerar o novo quadro como uma cópia do original
             novoquadro = quadro.copy()
+
             for x in range(0, largura_quadro - 1):
                 for y in range(0, altura_quadro - 1):
                     novoquadro[y, (largura_quadro - x) - 1] = quadro[y, x]
