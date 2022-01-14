@@ -93,11 +93,12 @@ def invertidovid(vid):
 
 
 def menu():
-    print("\n<--- Bem-vindo à edição de videos --->\n")
-    print("1: Transformar um video no seu preto e branco.")
-    print("2: Transformar um video no seu negativo.")
-    print("3: Transformar um video no seu inverso.")
-    print("0: Terminar.\n")
+    print("\n             # Bem-vindo à edição de video #")
+    print("===========================================================")
+    print("1 -> Transformar um video no seu preto e branco.")
+    print("2 -> Transformar um video no seu negativo.")
+    print("3 -> Transformar um video no seu inverso.")
+    print("0 -> Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
 

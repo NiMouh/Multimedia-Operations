@@ -48,14 +48,15 @@ def atraso_audio(atraso_ms, audio):
 
 
 def menu():
-    print("\n<--- Bem-vindo à edição de audio --->\n")
-    print("1: Cortar parte de um audio.")
-    print("2: Adiciona 2 audios.")
-    print("3: Juntar 2 audios.")
-    print("4: Normalizar um audio.")
-    print("5: Abrandar um audio.")
-    print("6: Colocar atraso (delay) num audio.")
-    print("0: Terminar.\n")
+    print("\n           # Bem-vindo à edição de audio #")
+    print("===========================================================")
+    print("1 -> Cortar parte de um audio.")
+    print("2 -> Adiciona 2 audios.")
+    print("3 -> Juntar 2 audios.")
+    print("4 -> Normalizar um audio.")
+    print("5 -> Abrandar um audio.")
+    print("6 -> Colocar atraso (delay) num audio.")
+    print("0 -> Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
 
