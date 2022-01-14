@@ -45,10 +45,11 @@ def rl_compressao(string):
 
 
 def menu():
-    print("\n<--- Bem-vindo á compressão --->\n")
-    print("1: Compressão em LZW.")
-    print("2: Técnica Run-Length Encoding (RLE).")
-    print("0: Terminar.\n")
+    print("\n                # Bem-vindo à compressão #")
+    print("===========================================================")
+    print("1 -> Compressão em LZW.")
+    print("2 -> Técnica RLE (Run-Length Encoding).")
+    print("0 -> Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
 

@@ -202,17 +202,18 @@ def invertida_vertical(imagem):
 
 
 def menu():
-    print("\n<--- Bem-vindo à edição de imagens --->\n")
-    print("1: Fazer adição entre 2 imagens.")
-    print("2: Fazer subtração entre 2 imagens.")
-    print("3: Fazer AND lógico entre 2 imagens.")
-    print("4: Fazer OR lógico entre 2 imagens.")
-    print("5: Fazer XOR lógico entre 2 imagens.")
-    print("6: Transformar uma imagem a cores numa em preto e branco.")
-    print("7: Transformar uma imagem no seu negativo.")
-    print("8: Transformar uma imagem no seu inverso.(horizontalmente)")
-    print("9: Transformar uma imagem no seu inverso (verticalmente).")
-    print("0: Terminar.\n")
+    print("\n           # Bem-vindo à edição de imagens #")
+    print("===========================================================")
+    print("1 -> Fazer adição entre 2 imagens.")
+    print("2 -> Fazer subtração entre 2 imagens.")
+    print("3 -> Fazer AND lógico entre 2 imagens.")
+    print("4 -> Fazer OR lógico entre 2 imagens.")
+    print("5 -> Fazer XOR lógico entre 2 imagens.")
+    print("6 -> Transformar uma imagem a cores numa em preto e branco.")
+    print("7 -> Transformar uma imagem no seu negativo.")
+    print("8 -> Transformar uma imagem no seu inverso.(horizontalmente)")
+    print("9 -> Transformar uma imagem no seu inverso (verticalmente).")
+    print("0 -> Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
 

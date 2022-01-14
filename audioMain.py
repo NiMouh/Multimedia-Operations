@@ -2,7 +2,6 @@ from pydub import AudioSegment
 
 
 def corta_audio(primeiro_tempo, segundo_tempo, audio):
-
     # Conversão dos tempos dados para segundos
     t1 = primeiro_tempo * 1000
     t2 = segundo_tempo * 1000
@@ -12,8 +11,13 @@ def corta_audio(primeiro_tempo, segundo_tempo, audio):
     audio_cortado.export('Som/corte.wav', format="wav")
 
 
-def junta_audio(primeiro_audio, segundo_audio):
+def adiciona_audio(primeiro_audio, segundo_audio):
+    # Declaração do "add_audio" como sendo igual à soma dos vetores dos audios originais e exportação do mesmo
+    add_audio = primeiro_audio + segundo_audio
+    add_audio.export('Som/adicao.wav', format="wav")
 
+
+def junta_audio(primeiro_audio, segundo_audio):
     # Declaração do "juncao_audio" como sendo igual ao produto dos vetores dos audios originais e exportação do mesmo
     juncao_audio = primeiro_audio * segundo_audio
     juncao_audio.export('Som/juncao.wav', format="wav")
@@ -28,7 +32,6 @@ def normaliza_audio(valor_dbfs, audio):
 
 
 def abranda_audio(velocidade, audio):
-
     audio_slowed = audio
     slowed = 1 - velocidade
 
@@ -37,7 +40,6 @@ def abranda_audio(velocidade, audio):
 
 
 def atraso_audio(atraso_ms, audio):
-
     audio_delay = AudioSegment.empty()
     for x in range(atraso_ms):
         audio_delay.split_to_mono().append(0)
@@ -46,13 +48,15 @@ def atraso_audio(atraso_ms, audio):
 
 
 def menu():
-    print("\n<--- Bem-vindo à edição de audio --->\n")
-    print("1: Cortar parte de um audio.")
-    print("2: Juntar 2 audios.")
-    print("3: Normalizar um audio.")
-    print("4: Abrandar um audio.")
-    print("5: Colocar atraso (delay) num audio.")
-    print("0: Terminar.\n")
+    print("\n           # Bem-vindo à edição de audio #")
+    print("===========================================================")
+    print("1 -> Cortar parte de um audio.")
+    print("2 -> Adiciona 2 audios.")
+    print("3 -> Juntar 2 audios.")
+    print("4 -> Normalizar um audio.")
+    print("5 -> Abrandar um audio.")
+    print("6 -> Colocar atraso (delay) num audio.")
+    print("0 -> Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
 
@@ -72,20 +76,23 @@ if __name__ == "__main__":
             corta_audio(tempo1, tempo2, audio_um)
             print("Opção 1 foi concluída.")
         elif opcao == 2:
-            junta_audio(audio_um, audio_dois)
+            adiciona_audio(audio_um, audio_dois)
             print("Opção 2 foi concluída.")
         elif opcao == 3:
-            valor = float(input("Qual o valor da normalização que pretende (em dBS): "))
-            normaliza_audio(valor, audio_tres)
+            junta_audio(audio_um, audio_dois)
             print("Opção 3 foi concluída.")
         elif opcao == 4:
-            vel = float(input("Que a percentagem de abrandamento pretende que o video tenha (decimal): "))
-            abranda_audio(vel, audio_um)
+            valor = float(input("Qual o valor da normalização que pretende (em dBS): "))
+            normaliza_audio(valor, audio_tres)
             print("Opção 4 foi concluída.")
         elif opcao == 5:
+            vel = float(input("Que a percentagem de abrandamento pretende que o video tenha (decimal): "))
+            abranda_audio(vel, audio_um)
+            print("Opção 5 foi concluída.")
+        elif opcao == 6:
             delay = int(input("Qual o delay que pretende (em ms): "))
             atraso_audio(delay, audio_dois)
-            print("Opção 5 foi concluída.")
+            print("Opção 6 foi concluída.")
         else:
             print("Opção inválida.")
 
