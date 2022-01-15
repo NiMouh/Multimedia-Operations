@@ -213,6 +213,7 @@ def menu():
     print("7 -> Transformar uma imagem no seu negativo.")
     print("8 -> Transformar uma imagem no seu inverso.(horizontalmente)")
     print("9 -> Transformar uma imagem no seu inverso (verticalmente).")
+    print("10-> Comprimir uma imagem.")
     print("0 -> Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
@@ -254,6 +255,10 @@ if __name__ == "__main__":
         elif opcao == 9:
             invertida_vertical(imagem_primaria)
             print("Operação 9 foi concluída.")
+        elif opcao == 10:
+            qualidade = int(input("Defina a qualidade da imagem: "))
+            imagem_primaria.save("comprimida.jpg", optimize=True, quality=qualidade)
+            print("Operação 10 foi concluída.")
         else:
             print("Opção inválida.")
 
