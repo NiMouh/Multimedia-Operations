@@ -40,10 +40,12 @@ def abranda_audio(velocidade, audio):
 
 
 def atraso_audio(atraso_ms, audio):
-    audio_delay = AudioSegment.empty()
-    for x in range(atraso_ms):
-        audio_delay.split_to_mono().append(0)
-    audio_delay.split_to_mono().append(audio)
+    # Criação de um audio vazio dado a quantidade de atraso pedida
+    vazio = atraso_ms * 1000
+    audio_delay = AudioSegment.silent(duration=vazio)
+
+    # Adição desse mesmo audio vazio ao início do audio original e exportação do mesmo
+    audio_delay += audio
     audio_delay.export("Som/delay.wav", format="wav")
 
 
@@ -90,8 +92,8 @@ if __name__ == "__main__":
             abranda_audio(vel, audio_um)
             print("Opção 5 foi concluída.")
         elif opcao == 6:
-            delay = int(input("Qual o delay que pretende (em ms): "))
-            atraso_audio(delay, audio_dois)
+            delay = int(input("Qual o delay que pretende (em segundos): "))
+            atraso_audio(delay, audio_um)
             print("Opção 6 foi concluída.")
         else:
             print("Opção inválida.")
