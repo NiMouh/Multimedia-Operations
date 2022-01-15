@@ -11,20 +11,19 @@
 		— Inversão X
 		— Preto e branco X
 
-## VIDEO
-	- FAZER VIDEO A CORES FICAR A PRETO E BRANCO X
-## SOM
+## VIDEO (MENU FEITO)
+	— FAZER VIDEO A CORES FICAR A PRETO E BRANCO X
+## SOM (MENU FEITO)
 	> OPERAÇÕES SOBRE O SOM
-		- Cortar som X
-		- Juntar 2 sons X
+		— Cortar som X
+		— Juntar 2 sons X
 	> aplicação de filtros
-		- Atrasos (delay);
-		- Normalização X
+		— Atrasos (delay) X
+		— Normalização X
 
 
-# COMPRESSÃO
+# COMPRESSÃO (MENU FEITO)
     — Compressão em LZW X
-    — TÉCNICAS DE SUPRESSÃO DE SEQUÊNCIAS REPETITIVAS;
     — Compressão Run-Legth X
 
 
