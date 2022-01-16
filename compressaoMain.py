@@ -46,6 +46,7 @@ def rl_compressao(string):
 
 def zeros_compressao(string):
     codigoZeros = ""
+    bits = 0
     i = 0
     while i < len(string):
 
@@ -56,10 +57,11 @@ def zeros_compressao(string):
 
         if conta >= 2:
             codigoZeros += "!" + str(conta)
+            bits += 1
         else:
             i += 1
             codigoZeros += string[i - 1]
-    print("O rácio de compressão é de: " + str(len(string) / (len(codigoZeros) - 1)))
+    print("O rácio de compressão é de: " + str(len(string) / (len(codigoZeros) - bits)))
     return codigoZeros
 
 
