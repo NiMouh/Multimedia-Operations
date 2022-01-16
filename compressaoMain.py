@@ -44,11 +44,31 @@ def rl_compressao(string):
     return codigoRL
 
 
+def zeros_compressao(string):
+    codigoZeros = ""
+    i = 0
+    while i < len(string):
+
+        conta = 0
+        while i < len(string) - 1 and (string[i] == "0" or string[i] == " "):
+            conta += 1
+            i += 1
+
+        if conta >= 2:
+            codigoZeros += "!" + str(conta)
+        else:
+            i += 1
+            codigoZeros += string[i - 1]
+    print("O rácio de compressão é de: " + str(len(string) / (len(codigoZeros) - 1)))
+    return codigoZeros
+
+
 def menu():
     print("\n                # Bem-vindo à compressão #")
     print("===========================================================")
     print("1 -> Compressão em LZW.")
     print("2 -> Técnica RLE (Run-Length Encoding).")
+    print("3 -> Técnicas de supressão de zeros ou espaços.")
     print("0 -> Terminar.\n")
     escolha = int(input("Escolha uma opção: "))
     return escolha
@@ -79,6 +99,10 @@ if __name__ == "__main__":
             out_tssr = rl_compressao(strrr)
             ficheiro_escrita_tssr.write(out_tssr)
             print("O código comprimido é: " + out_tssr)
+        elif opcao == 3:
+            out_zeros = zeros_compressao(strrr)
+            ficheiro_escrita_tssr.write(out_zeros)
+            print("O código comprimido é: " + out_zeros)
         else:
             print("Opção inválida.")
         opcao = menu()

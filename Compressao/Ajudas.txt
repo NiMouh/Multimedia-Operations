@@ -1,0 +1,2 @@
+wwwwaaadexxxxxxywww -> RLE
+7420000000000005 -> Supressão de Zeros
