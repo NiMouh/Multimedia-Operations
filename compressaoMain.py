@@ -108,6 +108,7 @@ if __name__ == "__main__":
         else:
             print("Opção inválida.")
         opcao = menu()
+    print("Encerrando...")
 
     # Fechando os ficheiros de leitura
     ficheiro_leitura_lzw.close()

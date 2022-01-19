@@ -264,3 +264,4 @@ if __name__ == "__main__":
 
         # Volta a printar o menu
         opcao = menu()
+    print("Encerrando...")
