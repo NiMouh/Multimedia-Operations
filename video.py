@@ -20,8 +20,8 @@ def pretoebrancovid(vid):
         existeQuadro, quadro = video.read()
 
         if existeQuadro:
-            for x in range(0, largura_quadro - 1):
-                for y in range(0, altura_quadro - 1):
+            for x in range(0, largura_quadro):
+                for y in range(0, altura_quadro):
                     r, g, b = quadro[y, x]
                     cinza = r * 0.2125 + g * 0.7174 + b * 0.0721
                     quadro[y, x] = [cinza, cinza, cinza]
@@ -50,8 +50,8 @@ def negativovid(vid):
         existeQuadro, quadro = video.read()
 
         if existeQuadro:
-            for x in range(0, largura_quadro - 1):
-                for y in range(0, altura_quadro - 1):
+            for x in range(0, largura_quadro):
+                for y in range(0, altura_quadro):
                     r, g, b = quadro[y, x]
                     quadro[y, x] = [255 - r, 255 - g, 255 - b]
             novo_video.write(quadro)
