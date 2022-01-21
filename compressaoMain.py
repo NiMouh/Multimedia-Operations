@@ -37,7 +37,7 @@ def rl_compressao(string):
         i += 1
 
         if conta >= 2:
-            codigoRL += str(conta) + "!" + string[i - 1]
+            codigoRL += "!" + str(conta) + string[i - 1]
         else:
             codigoRL += string[i - 1]
     print("O rácio de compressão é de: " + str(len(string) / len(codigoRL)))
